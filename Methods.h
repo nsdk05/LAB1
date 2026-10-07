@@ -34,10 +34,10 @@ int AbsNum(int number);
 bool Is35(int number);
 
 // Возвращает максимальное из трёх чисел
-int Max3(int number1, int number2, int number3);
+int Max3(int number_one, int number_two, int number_three);
 
 // Возвращает сумму чисел, а если она лежит в диапазоне от 10 до 19, то 20
-int Sum2(int number1, int number2);
+int Sum2(int number_one, int number_two);
 
 // Возвращает название дня недели по номеру от 1 до 7
 std::string Day(int day_number);
@@ -69,11 +69,12 @@ int FindFirst(const int* arr, int number, int limit);
 // Возвращает наибольшее по модулю значение массива
 int MaxAbs(const int* arr, int limit);
 
-// Возвращает новый массив размера limit1 + limit2, в котором в позицию pos
-// вставлены элементы массива ins
+// Возвращает новый массив размера limit_one + limit_two, в котором
+// в позицию pos вставлены элементы массива ins
 // При некорректных параметрах возвращает nullptr
 // Память освобождает вызывающий
-int* Add(const int* arr, const int* ins, int pos, int limit1, int limit2);
+int* Add(const int* arr, const int* ins, int pos, int limit_one,
+         int limit_two);
 
 // Возвращает новый массив, в котором элементы arr записаны в обратном
 // порядке

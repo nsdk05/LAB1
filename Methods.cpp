@@ -68,20 +68,20 @@ bool Is35(int number) {
 }
 
 // Задача 5 Тройной максимум
-int Max3(int number1, int number2, int number3) {
-    int result = number1;
-    if (number2 > result) {
-        result = number2;
+int Max3(int number_one, int number_two, int number_three) {
+    int result = number_one;
+    if (number_two > result) {
+        result = number_two;
     }
-    if (number3 > result) {
-        result = number3;
+    if (number_three > result) {
+        result = number_three;
     }
     return result;
 }
 
 // Задача 7 Двойная сумма
-int Sum2(int number1, int number2) {
-    int sum = number1 + number2;
+int Sum2(int number_one, int number_two) {
+    int sum = number_one + number_two;
     if (sum >= 10 && sum <= 19) {
         return 20;
     }
@@ -194,21 +194,22 @@ int MaxAbs(const int* arr, int limit) {
 }
 
 // Задача 5 Добавление массива в массив
-int* Add(const int* arr, const int* ins, int pos, int limit1, int limit2) {
-    if (pos < 0 || pos > limit1 || limit1 < 0 || limit2 < 0) {
+int* Add(const int* arr, const int* ins, int pos, int limit_one,
+         int limit_two) {
+    if (pos < 0 || pos > limit_one || limit_one < 0 || limit_two < 0) {
         return nullptr;
     }
-    int* result = new int[limit1 + limit2];
+    int* result = new int[limit_one + limit_two];
     int limit_result = 0;
     for (int i = 0; i < pos; ++i) {
         result[limit_result] = arr[i];
         ++limit_result;
     }
-    for (int i = 0; i < limit2; ++i) {
+    for (int i = 0; i < limit_two; ++i) {
         result[limit_result] = ins[i];
         ++limit_result;
     }
-    for (int i = pos; i < limit1; ++i) {
+    for (int i = pos; i < limit_one; ++i) {
         result[limit_result] = arr[i];
         ++limit_result;
     }
@@ -361,21 +362,22 @@ void Task1() {
                 break;
             }
             case 4: {
-                int limit1 = ReadInt("Введите первую границу :");
-                int limit2 = ReadInt("Введите вторую границу :");
+                int limit_one = ReadInt("Введите первую границу :");
+                int limit_two = ReadInt("Введите вторую границу :");
                 int number = ReadInt("Введите число :");
-                std::cout << "Ваше число входит в отрезок от " << limit1
-                          << " до " << limit2 << " : "
-                          << BoolText(IsInRange(limit1, limit2, number))
+                std::cout << "Ваше число входит в отрезок от " << limit_one
+                          << " до " << limit_two << " : "
+                          << BoolText(IsInRange(limit_one, limit_two, number))
                           << "\n";
                 break;
             }
             case 5: {
-                int number1 = ReadInt("Введите первое число :");
-                int number2 = ReadInt("Введите второе число :");
-                int number3 = ReadInt("Введите третье число :");
+                int number_one = ReadInt("Введите первое число :");
+                int number_two = ReadInt("Введите второе число :");
+                int number_three = ReadInt("Введите третье число :");
                 std::cout << "Ваши числа равны "
-                          << BoolText(IsEqual(number1, number2, number3))
+                          << BoolText(
+                                 IsEqual(number_one, number_two, number_three))
                           << "\n";
                 break;
             }
@@ -414,17 +416,17 @@ void Task2() {
                 break;
             }
             case 3: {
-                int number1 = ReadInt("Введите первое число :");
-                int number2 = ReadInt("Введите второе число :");
-                int number3 = ReadInt("Введите третье число :");
+                int number_one = ReadInt("Введите первое число :");
+                int number_two = ReadInt("Введите второе число :");
+                int number_three = ReadInt("Введите третье число :");
                 std::cout << "Максимальное число из трех :"
-                          << Max3(number1, number2, number3) << "\n";
+                          << Max3(number_one, number_two, number_three) << "\n";
                 break;
             }
             case 4: {
-                int number1 = ReadInt("Введите первое число :");
-                int number2 = ReadInt("Введите второе число :");
-                std::cout << "Сумма чисел :" << Sum2(number1, number2)
+                int number_one = ReadInt("Введите первое число :");
+                int number_two = ReadInt("Введите второе число :");
+                std::cout << "Сумма чисел :" << Sum2(number_one, number_two)
                           << "\n";
                 break;
             }
