@@ -18,9 +18,10 @@ int CharToNum(char symbol);
 // Возвращает true, если число двузначное
 bool Is2Digits(int number);
 
-// Возвращает true, если number лежит между left и right включительно
+// Возвращает true, если number лежит между limit_one и limit_two
+// включительно
 // Какая из границ больше, заранее неизвестно
-bool IsInRange(int left, int right, int number);
+bool IsInRange(int limit_one, int limit_two, int number);
 
 // Возвращает true, если все три числа равны
 bool IsEqual(int number_one, int number_two, int number_three);

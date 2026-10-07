@@ -27,9 +27,9 @@ bool Is2Digits(int number) {
 }
 
 // Задача 7 Диапазон
-bool IsInRange(int left, int right, int number) {
-    if ((left <= number && number <= right) ||
-        (left >= number && number >= right)) {
+bool IsInRange(int limit_one, int limit_two, int number) {
+    if ((limit_one <= number && number <= limit_two) ||
+        (limit_one >= number && number >= limit_two)) {
         return true;
     } else {
         return false;
@@ -272,6 +272,8 @@ int ReadInt(const std::string& message) {
     }
 }
 
+// Строка корректна, если в ней только вещественное число без лишних
+// символов
 double ReadDouble(const std::string& message) {
     while (true) {
         std::istringstream stream(ReadLine(message));
@@ -295,6 +297,7 @@ char ReadCharToNum(const std::string& message) {
     }
 }
 
+// Повторяет ввод, пока число не попадёт в отрезок от min_value до max_value
 int ReadIntInRange(const std::string& message, int min_value, int max_value) {
     while (true) {
         int value = ReadInt(message);
@@ -313,6 +316,7 @@ void ReadArr(int* arr, int size, const std::string& name) {
     }
 }
 
+// Вывод элементов массива через запятую в квадратных скобках
 void PrintArr(const int* arr, int size) {
     std::cout << "[";
     for (int i = 0; i < size; ++i) {
@@ -324,6 +328,7 @@ void PrintArr(const int* arr, int size) {
     std::cout << "]\n";
 }
 
+// Перевод логического значения в текст для вывода на экран
 std::string BoolText(bool value) {
     return value ? "true (да)" : "false (нет)";
 }
